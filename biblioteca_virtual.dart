@@ -30,7 +30,7 @@ class BibliotecaVirtual {
   // Método para cadastrar novos livros na biblioteca
   void cadastrarLivro(Livro livro) {
     _livros[livro.id] = livro;  // Adiciona o livro ao mapa de livros
-    print('Livro cadastrado com sucesso: ${livro.titulo}');  // Mensagem de confirmação
+    print('Livro "${livro.titulo}" cadastrado com sucesso!');  // Mensagem de confirmação
   }
 
   // Método para remover livros da biblioteca com base em critérios (título, autor ou ID)
@@ -38,7 +38,7 @@ class BibliotecaVirtual {
     // Verifica e remove os livros que atendem aos critérios fornecidos
     if (id != null && _livros.containsKey(id)) {
       _livros.remove(id);
-      print('Livro com ID $id removido com sucesso.');
+      print('Livro com ID $id removido com sucesso!');
     } else if (titulo != null || autor != null) {
       _livros.removeWhere((key, livro) =>
         (titulo != null && livro.titulo == titulo) ||
